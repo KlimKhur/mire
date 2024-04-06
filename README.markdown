@@ -1,5 +1,10 @@
 # Mire
 
+Команда "Асы"
+- Хурдаков Климентий
+- Глечян Эдуард
+- Тимофей Фомин
+
 It's a nonviolent MUD. (Multi-User Dungeon)
 
 ## Usage
