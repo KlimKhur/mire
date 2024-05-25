@@ -1,0 +1,6 @@
+{:desc "Вы в темной и сырой пещере, где слышны звуки капающей воды. Стены покрыты сталактитами, а пол – скользкими камнями. В глубине пещеры видно тусклое свечение, манящее вас к себе."
+ :exits {:south :secret_garden
+         :north :waterfall
+         :west :underground_lake}
+ :items #{:shield}
+ :enemies #{:skeletons}}

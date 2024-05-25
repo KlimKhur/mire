@@ -1,2 +1,3 @@
-{:desc "You find yourself in a round room with a pillar in the middle."
- :exits {:north :closet :south :hallway}}
+{:desc "Вы находитесь в круглой комнате с древними надписями на стенах. Мерцающий свет факелов отбрасывает причудливые тени, создавая атмосферу загадочности. В центре комнаты стоит старинный пьедестал, покрытый пылью."
+ :exits {:north :corridor}
+ :items #{:torch :healing_potion :key}}
