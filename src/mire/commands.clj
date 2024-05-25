@@ -31,19 +31,15 @@
 (defn look
   "Получить описание окружающей обстановки и её содержимого."
   []
-  (println (:desc @*current-room*)) 
-  (flush)
-  (println (str "Выходы: " (keys @(:exits @*current-room*)))) 
-  (flush)
-  (let [inhabitants (filter #(contains? monsters (name %)) @(:inhabitants @*current-room*))]
-    (when (seq inhabitants)
-      (println (str "Монстры в комнате: " (str/join ", " (map name inhabitants))))
-      (flush)))
-  (let [items @(:items @*current-room*)]
-    (when (seq items)
-      (println (str "Здесь лежат: " (str/join ", " (map name items))))
-      (flush))))
-
+  (println (:desc @*current-room*))
+  (println "Выходы: " (keys @(:exits @*current-room*)))
+  (when-let [items (seq @(:items @*current-room*))]
+    (println "Здесь лежат:" (str/join ", " (map name items))))
+  (when-let [enemies (seq @(:inhabitants @*current-room*))]
+    (let [monster-names (filter #(contains? monsters (name %)) enemies)]
+      (when (seq monster-names)
+        (println "Монстры в комнате:" (str/join ", " (map name monster-names))))))
+  (flush))
 
 (defn give-all-spells []
   (dosync
@@ -167,7 +163,8 @@
         (println (str "Вы сбежали в " (name direction) "!"))
         (println "Вы сбежали из боя!")
         (println (look))
-        (flush)))))
+        (flush)
+        :break))))
 
 (defn handle-taunt [monster monster-health]
   (println (str "Вы насмехаетесь над " monster ". Это раздражает его, и он атакует вас!"))
@@ -363,9 +360,9 @@
                 (println "Вы переместились в новую комнату.")
                 (flush))))
         (do
-          (println "Вы не можете идти в этом направлении.")
+          (println "О, игра работает!")
           (flush)
-          "Не удалось переместиться.")))))))
+          "Поставьте зачет")))))))
 
 (defn grab
   "Поднять предмет."
