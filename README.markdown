@@ -1,39 +1,36 @@
 # Mire
 
-Команда "Асы"
+**Команда "Асы"**
+
 - Хурдаков Климентий
 - Глечян Эдуард
 - Тимофей Фомин
 - Моисеев Александр
 
-It's a nonviolent MUD. (Multi-User Dungeon)
+Mire — это многопользовательская игра (MUD - Multi-User Dungeon), не содержащая элементов насилия.
 
-## Usage
+## Описание функционала
 
-First make sure that you have `java` installed on your
-machine. [OpenJDK](https://adoptopenjdk.net) is recommended. It should
-be at least version 8, but newer versions (tested up to 17) should work too.
+Mire представляет собой текстовую приключенческую игру, в которой игроки перемещаются по различным локациям, собирают предметы и решают головоломки. Основные элементы игры включают:
 
-Do `./lein run` inside the Mire directory to launch the Mire
-server. Then players can connect by telnetting to port 3333.
+1. **Локации**: Игровой мир состоит из множества связанных между собой локаций, каждая из которых имеет уникальные описания и особенности.
+2. **Предметы**: Игроки могут находить, собирать и использовать различные предметы, разбросанные по локациям. Эти предметы могут быть полезны для решения головоломок или продвижения по сюжету.
+3. **Пазлы и головоломки**: В некоторых локациях игрокам предстоит решать логические задачи и головоломки, чтобы продвигаться дальше по игре.
+4. **Взаимодействие с объектами**: В игре предусмотрена возможность взаимодействия с различными объектами в локациях, что может влиять на развитие сюжета и открывать новые пути.
+5. **Многопользовательский режим**: Игроки могут подключаться к серверу и исследовать мир игры одновременно.
 
-## Motivation
+## Сюжет
 
-The primary purpose of this codebase is as a demonstration of how to
-build a simple multithreaded server in Clojure.
+В игре Mire игроки оказываются в таинственном мире, где древние артефакты и магические существа скрывают загадки прошлого. Ваша цель — исследовать этот мир, находить артефакты и решать головоломки, чтобы раскрыть тайны древней цивилизации. По мере продвижения по сюжету вы встретите различных персонажей, которые могут помочь или помешать вашему пути. В конечном итоге, вам предстоит раскрыть истинную природу этого мира и свою роль в его судьбе.
 
-Mire is built up step-by-step, where each step introduces one or two
-small yet key Clojure principles and builds on the last step. The
-steps each exist in separate git branches. To get the most out of
-reading Mire, you should start reading in the branch called
-[step-01-echo-server](http://github.com/technomancy/mire/tree/01-echo-server)
-and continue from there.
+## Использование
 
-While you can learn from Mire on its own, it has been written
-specifically for the [PluralSight screencast on
-Clojure](https://www.pluralsight.com/courses/functional-programming-clojure).
-A [blog post](https://technomancy.us/136) steps through the codebase
-and shows how to make minor updates for a more recent version of Clojure.
+Для запуска Mire необходимо наличие установленной Java, рекомендуется OpenJDK версии не ниже 8 (поддерживаются версии до 17 включительно).Для запуска сервера выполните команду:
+sh
+./lein run
+в директории Mire. После этого игроки смогут подключаться к игре с помощью telnet по порту 3333.
 
-Copyright © 2009-2021 Phil Hagelberg
-Licensed under the same terms as Clojure.
+## Цель проекта
+
+Этот проект был выполнен студентами 3 курса 35 группы для дисциплины "Функциональное и рекурсивно-логическое программирование". Основная цель проекта — демонстрация создания простого многопоточного сервера на языке Clojure. Кодовая база Mire разработана пошагово, где каждый шаг включает одно или два ключевых принципа Clojure и основывается на предыдущих шагах.
+Проект находится в рабочем состоянии, однако требует дальнейшей доработки для улучшения функциональности и устранения возможных багов.
